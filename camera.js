@@ -6,16 +6,27 @@ window.onload = function(e) {
 
 function init() {
   if (!hasUserMedia()) {
-    alert('Oh snap!');
+    alert('This device does not support getUserMedia()!')
   } else {
     loadCamera();
+    loadAudio();
   }
 }
 
 function loadCamera() {
-  navigator.webkitGetUserMedia({video: true},
+  navigator.getUserMedia({video: true},
   (stream) => {
     document.getElementById('camera').src = URL.createObjectURL(stream);
+  },
+  () => {
+    alert('Could not connect to stream!')
+  });
+}
+
+function loadAudio() {
+  navigator.getUserMedia({audio: true},
+  (stream) => {
+    document.getElementById('audio').src = URL.createObjectURL(stream);
   },
   () => {
     alert('Could not connect to stream!')
