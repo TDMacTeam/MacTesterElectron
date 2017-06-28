@@ -1,8 +1,4 @@
-'use strict'
-
-window.onload = function(e) {
-  init();
-}
+window.addEventListener('load', init, false);
 
 function init() {
   if (!hasUserMedia()) {
@@ -31,6 +27,15 @@ function loadAudio() {
   () => {
     alert('Could not connect to stream!')
   });
+}
+
+function playAudio() {
+  var player = document.getElementById('audio');
+  if (player.paused) {
+    player.play();
+  } else {
+    player.pause();
+  }
 }
 
 function hasUserMedia() {

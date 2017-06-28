@@ -1,5 +1,5 @@
 body {
-  font-family: "Muli", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 header {
@@ -23,26 +23,43 @@ header h1 {
 
 #rightSide {
   float: right;
-  max-width: 40%;
-  width: 40%;
+  width: calc(45% - 10px);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   background-color: red;
+  padding-right: 10px;
+  padding-top: 10px;
 }
 
 #leftSide {
   float: left;
-  width: 60%;
+  width: calc(55% - 10px);
   background-color: green;
-}
-
-#kbLayout {
-  width: 95%;
-  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 #camera {
   width: 360px;
+}
+
+#audioContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#usb {
+  position: relative;
+  left: 20px;
+}
+
+.notifier {
+  padding-bottom: 20px;
+}
+
+.fa-grey {
+  color: #1C1C1C;
 }

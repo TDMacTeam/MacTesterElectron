@@ -1,36 +1,97 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Tech Defenders Mac Tester</title>
-    <script src="camera.js"></script>
-    <link href="css/main.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,600|Raleway:400,600" rel="stylesheet" />
-  </head>
-  <body>
-    <header>
-      <img src="images/td_icon.png" width="64" height="64" />
-      <h1>Tech Defenders Mac Tester</h1>
-    </header>
-    <div id="mainContents">
-      <div id="leftSide">
-        <div id="keyboardContainer">
-            <img src="images/notebook_layout.png" id="kbLayout"/>
-        </div>
-      </div>
-      <div id="rightSide">
-        <div id="cameraContainer">
-          <video id="camera" autoplay></video>
-        </div>
-        <div id="audioContainer">
-          <audio id="audio"></audio>
-          <div id="audioControls">
-            <p>
-              |>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Tech Defenders Mac Tester</title>
+		<script src="js/keyboard.js"></script>
+		<script src="js/camera.js"></script>
+		<link href="css/main.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Raleway:400" rel="stylesheet" />
+		<script src="https://use.fontawesome.com/e810e5ccc9.js"></script>
+	</head>
+	<body onload="drawKeyboard()">
+		<header>
+			<img src="images/td_icon.png" width="64" height="64" />
+			<h1>Tech Defenders Mac Tester</h1>
+		</header>
+		<div id="mainContents">
+			<div id="leftSide">
+				<div id="keyboardContainer">
+					<canvas id="kbLayout" width="750px" height="300px"></canvas>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square-o fa-stack-2x"></i>
+						<i class="fa fa-keyboard-o fa-stack-1x"></i>
+					</span>
+				</div>
+				<div id="notifiers">
+					<label id="USBLabel">USB</label>
+					<div id="usb" class="notifier">
+						<label id="leftUSBLabel">Left</label>
+						<span class="fa-stack fa-lg" id="leftUSB">
+							<i class="fa fa-square fa-stack-2x fa-grey" aria-hidden="true"></i>
+							<i class="fa fa-usb fa-stack-1x fa-inverse" aria-hidden="true"></i>
+						</span>
+						<label id="rightUSBLabel">Right</label>
+						<span class="fa-stack fa-lg">
+							<i class="fa fa-square fa-stack-2x fa-grey" aria-hidden="true"></i>
+							<i class="fa fa-usb fa-stack-1x fa-inverse" aria-hidden="true"></i>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div id="rightSide">
+				<div id="cameraContainer">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square-o fa-stack-2x"></i>
+						<i class="fa fa-video-camera fa-stack-1x"></i>
+					</span>
+					<video id="camera" autoplay></video>
+				</div>
+				<div id="audioContainer">
+					<audio id="audio"></audio>
+					<label>Speakers</label>
+					<span class="fa-stack fa-lg fa-grey">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-volume-up fa-inverse fa-stack-1x"></i>
+					</span>
+					<br />
+					<label>Microphone</label>
+					<span class="fa-stack fa-lg fa-grey" onclick="playAudio()">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-microphone fa-inverse fa-stack-1x"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div id="fa-unused">
+			<span class="fa-stack fa-lg">
+				<i class="fa fa-square-o fa-stack-2x"></i>
+				<i class="fa fa-thermometer fa-stack-1x"></i>
+			</span>
+			<span class="fa-stack fa-lg fa-grey">
+				<i class="fa fa-square fa-stack-2x"></i>
+				<i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+			</span>
+			<span class="fa-stack fa-lg">
+				<i class="fa fa-square-o fa-stack-2x"></i>
+				<i class="fa fa-headphones fa-stack-1x"></i>
+			</span>
+			<span class="fa-stack fa-lg">
+				<i class="fa fa-square-o fa-stack-2x"></i>
+				<i class="fa fa-microphone fa-stack-1x"></i>
+			</span>
+			<span class="fa-stack fa-lg">
+				<i class="fa fa-square-o fa-stack-2x"></i>
+				<i class="fa fa-bolt fa-stack-1x"></i>
+			</span>
+			<span class="fa-stack fa-lg">
+				<i class="fa fa-square-o fa-stack-2x"></i>
+				<i class="fa fa-bluetooth fa-stack-1x"></i>
+			</span>
+			<span class="fa-stack fa-lg">
+				<i class="fa fa-square-o fa-stack-2x"></i>
+				<i class="fa fa-power-off fa-stack-1x"></i>
+			</span>
+		</div>
+	</body>
 </html>
