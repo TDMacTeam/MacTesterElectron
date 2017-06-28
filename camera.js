@@ -1,7 +1,15 @@
 'use strict'
 
 window.onload = function(e) {
-  loadCamera();
+  init();
+}
+
+function init() {
+  if (!hasUserMedia()) {
+    alert('Oh snap!');
+  } else {
+    loadCamera();
+  }
 }
 
 function loadCamera() {
@@ -14,6 +22,6 @@ function loadCamera() {
   });
 }
 
-function getUserMedia() {
+function hasUserMedia() {
   return !!(navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia)
 }

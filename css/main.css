@@ -1,0 +1,28 @@
+body {
+  font-family: "Muli", sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+#mainContents {
+  display: flex;
+  justify-content: center;
+}
+
+#rightSide {
+  justify-content: space-between;
+}
+
+#leftSide {
+  justify-content: space-between;
+}
