@@ -3,18 +3,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Tech Defenders Mac Tester</title>
-		<script src="js/index.js"></script>
-		<script src="js/keyboard.js"></script>
-		<script src="js/camera.js"></script>
 		<link href="css/main.css" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css?family=Raleway:400" rel="stylesheet" />
 		<script src="https://use.fontawesome.com/e810e5ccc9.js"></script>
 	</head>
 	<body onload="drawKeyboard()">
 		<div id="winControls" style="float: left; padding-left: 5px;">
-			<span class="close">
+			<div id="closeBttn" class="button close">
 				<i class="fa fa-times-circle-o fa-2x" style="color: steelblue"></i>
-			</span>
+			</div>
 		</div>
 		<header>
 			<img src="images/td_icon.png" width="64" height="64" />
@@ -27,6 +24,13 @@
 					<i class="fa fa-laptop fa-stack-1x"></i>
 				</span>
 				<span class="fa-labeled">[MACBOOK]: [SERIAL]</span>
+			</div>
+			<div id="battery">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<i class="fa fa-battery-full fa-stack-1x"></i>
+				</span>
+				<span class="fa-labeled">Battery:</span>
 			</div>
 		</div>
 		<div id="mainContents">
@@ -108,5 +112,8 @@
 				<i class="fa fa-power-off fa-stack-1x"></i>
 			</span>
 		</div>
+		<script src="js/index.js"></script>
+		<script src="js/keyboard.js"></script>
+		<script src="js/camera.js"></script>
 	</body>
 </html>

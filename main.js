@@ -1,11 +1,6 @@
 const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path')
 const url = require('url')
-<<<<<<< HEAD
-const macInfo = require('./js/macInteraction.js')
-=======
-const macInfo = require('./macInteraction.js')
->>>>>>> 14d616b36b37a2e8330fc100cbe6428bc6e595e0
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -29,7 +24,6 @@ function createWindow () {
 
   // Open the DevTools.
   // win.webContents.openDevTools()
-  macInfo.cpuInfo()
 
   // Emitted when the window is closed.
   win.on('closed', () => {
