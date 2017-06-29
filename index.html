@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Tech Defenders Mac Tester</title>
+		<script src="js/index.js"></script>
 		<script src="js/keyboard.js"></script>
 		<script src="js/camera.js"></script>
 		<link href="css/main.css" rel="stylesheet" />
@@ -10,10 +11,24 @@
 		<script src="https://use.fontawesome.com/e810e5ccc9.js"></script>
 	</head>
 	<body onload="drawKeyboard()">
+		<div id="winControls" style="float: left; padding-left: 5px;">
+			<span class="close">
+				<i class="fa fa-times-circle-o fa-2x" style="color: steelblue"></i>
+			</span>
+		</div>
 		<header>
 			<img src="images/td_icon.png" width="64" height="64" />
 			<h1>Tech Defenders Mac Tester</h1>
 		</header>
+		<div id="specs">
+			<div id="serial">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<i class="fa fa-laptop fa-stack-1x"></i>
+				</span>
+				<span class="fa-labeled">[MACBOOK]: [SERIAL]</span>
+			</div>
+		</div>
 		<div id="mainContents">
 			<div id="leftSide">
 				<div id="keyboardContainer">

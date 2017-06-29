@@ -1,3 +1,5 @@
+'use strict'
+
 window.addEventListener('load', drawKeyboard, false);
 
 function drawKeyboard(ctx) {
@@ -23,7 +25,7 @@ function drawKeyboard(ctx) {
 
   yPos += 35;
   xPos = 15;
-  
+
   alpha.forEach((key) => {
     ctx.strokeRect(xPos, yPos, 30, 30);
     ctx.strokeText(key, xPos + 10, yPos + 20)
