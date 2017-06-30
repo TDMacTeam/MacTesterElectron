@@ -1,20 +1,25 @@
 'use strict'
 
 const si = require('systeminformation')
-const {ipcRenderer} = require('electron')
 
 exports = module.exports = {}
 
-exports.pollBattery = function() {
+exports.pollBattery = function(win) {
   si.battery()
-    .then(data => ipcRenderer.send('batteryData', data))
+    .then(data => {
+      console.log(data)
+      let batteryEl = document.getElementById('battery')
+      if (data.hasbattery) {
+        batteryEl.innerHTML = "Battery: Cycles: " + data.cyclecount + " Charging: " + data.ischarging
+      } else {
+        batteryEl.innerHTML = "Battery: Not installed"
+      }
+    })
 }
 
-exports.sysInfo = function() {
-  var response = {}
-  si.system().then(data => Object.assign(response, data))
-  si.osInfo().then(data => Object.assign(response, data))
-  return response
+exports.sysInfo = function(win) {
+  let serialEl = document.getElementById('serial')
+  si.system().then(data => serialEl.innerHTML = "Serial: " + data.serial)
 }
 
 exports.networkInfo = function() {

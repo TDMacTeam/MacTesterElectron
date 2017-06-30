@@ -18,19 +18,19 @@
 			<h1>Tech Defenders Mac Tester</h1>
 		</header>
 		<div id="specs">
-			<div id="serial">
+			<div id="serialContainer">
 				<span class="fa-stack fa-lg">
 					<i class="fa fa-square-o fa-stack-2x"></i>
 					<i class="fa fa-laptop fa-stack-1x"></i>
 				</span>
-				<span class="fa-labeled">[MACBOOK]: [SERIAL]</span>
+				<span class="fa-labeled" id="serial">[MACBOOK]: [SERIAL]</span>
 			</div>
-			<div id="battery">
+			<div id="batteryContainer">
 				<span class="fa-stack fa-lg">
 					<i class="fa fa-square-o fa-stack-2x"></i>
 					<i class="fa fa-battery-full fa-stack-1x"></i>
 				</span>
-				<span class="fa-labeled">Battery:</span>
+				<span class="fa-labeled" id="battery">Battery:</span>
 			</div>
 		</div>
 		<div id="mainContents">
@@ -67,15 +67,19 @@
 					<video id="camera" autoplay></video>
 				</div>
 				<div id="audioContainer">
-					<audio id="audio"></audio>
 					<label>Speakers</label>
 					<span class="fa-stack fa-lg fa-grey">
 						<i class="fa fa-square fa-stack-2x"></i>
 						<i class="fa fa-volume-up fa-inverse fa-stack-1x"></i>
 					</span>
+					<label>Play</label>
+					<span class="fa-stack fa-lg fa-grey" onclick="playAudio()">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-play fa-inverse fa-stack-1x"></i>
+					</span>
 					<br />
 					<label>Microphone</label>
-					<span class="fa-stack fa-lg fa-grey" onclick="playAudio()">
+					<span class="fa-stack fa-lg fa-grey" onclick="toggleRecording()">
 						<i class="fa fa-square fa-stack-2x"></i>
 						<i class="fa fa-microphone fa-inverse fa-stack-1x"></i>
 					</span>
@@ -115,5 +119,6 @@
 		<script src="js/index.js"></script>
 		<script src="js/keyboard.js"></script>
 		<script src="js/camera.js"></script>
+		<script src="js/audio.js"></script>
 	</body>
 </html>
