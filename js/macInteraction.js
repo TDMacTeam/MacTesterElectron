@@ -7,7 +7,6 @@ exports = module.exports = {}
 exports.pollBattery = function(win) {
   si.battery()
     .then(data => {
-      console.log(data)
       let batteryEl = document.getElementById('battery')
       if (data.hasbattery) {
         batteryEl.innerHTML = "Battery: Cycles: " + data.cyclecount + " Charging: " + data.ischarging
